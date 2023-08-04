@@ -139,7 +139,7 @@ curl http://$(minikube ip)
 Otherwise, which means Docker is installed via Docker Desktop support (e.g., macOS and Windows), any connection to the minikube container cannot be established directly since the minikube container runs in a VM managed by Docker Desktop. In this case, an SSH tunnel needs to be opened to the ingress-nginx-controller NodePort service in the minikube container. Open an SSH tunnel using the host port mapped to the minikube container's SSH port:
 
 ```console
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -N docker@127.0.0.1 -p $(docker port minikube | grep -w 22 | cut -d ":" -f2) -i ~/.minikube/machines/minikube/id_rsa -L 8181:localhost:80
+ssh -f -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -N docker@127.0.0.1 -p $(docker port minikube | grep -w 22 | cut -d ":" -f2) -i ~/.minikube/machines/minikube/id_rsa -L 8181:localhost:80
 ```
 
 After the execution of the command above, the application should be accessible via [http://localhost:8181](http://localhost:8181) URL.
