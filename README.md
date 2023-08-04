@@ -256,3 +256,32 @@ As a result of the project:
 
 - A simple monitoring stack consisting of Prometheus and Grafana has been deployed to the local kubernetes cluster and a kubernetes dashboard has been created.
 - Documentation and configuration files have been provided via GitHub.
+
+## Resources
+
+- [alpine](https://hub.docker.com/_/alpine)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [How can I use Python to get the system hostname?](https://stackoverflow.com/questions/4271740/how-can-i-use-python-to-get-the-system-hostname)
+- [Get current timestamp using Python](https://www.geeksforgeeks.org/get-current-timestamp-using-python/)
+- [How do I install python on alpine linux?](https://stackoverflow.com/questions/62554991/how-do-i-install-python-on-alpine-linux)
+- [Uvicorn - Settings](https://www.uvicorn.org/settings/)
+- [How to Use Local Docker Images in Kubernetes](https://sweetcode.io/how-to-use-local-docker-images-in-kubernetes/)
+- [Environment-specific instructions](https://kubernetes.github.io/ingress-nginx/deploy/#environment-specific-instructions)
+- [Accessing apps
+](https://minikube.sigs.k8s.io/docs/handbook/accessing/)
+- [How to Reduce Docker Image Size: 6 Optimization Methods](https://devopscube.com/reduce-docker-image-size/)
+- [Grep word matching](https://unix.stackexchange.com/questions/409428/grep-word-matching)
+- [Minikube IP is not externally accessible via Ingress/ Nodeport Servce](https://github.com/kubernetes/minikube/issues/13951)
+- [The Magic Behind the Scenes of Docker Desktop](https://www.docker.com/blog/the-magic-behind-the-scenes-of-docker-desktop/)
+- [Accessing Docker Desktop’s Virtual Machine](https://alanastorm.com/accessing-docker-desktops-virtual-machine/)
+- [I can't start Minikube](https://stackoverflow.com/questions/66173362/i-cant-start-minikube)
+- [Explore networking features](https://docs.docker.com/desktop/networking/#known-limitations-use-cases-and-workarounds)
+- [Uvicorn - Introduction](https://www.uvicorn.org/)
+- [FastAPI - Installation](https://fastapi.tiangolo.com/#installation)
+- [General FAQs for Desktop](https://docs.docker.com/desktop/faqs/general/)
+- [How to echo colored text in linux shell script](https://kedar.nitty-witty.com/blog/how-to-echo-colored-text-in-shell-script)
+- [How does one output bold text in Bash?](https://stackoverflow.com/questions/2924697/how-does-one-output-bold-text-in-bash)
+- [Get string after character [duplicate]](https://stackoverflow.com/questions/15148796/get-string-after-character)
+- [Prometheus and Grafana setup in Minikube](https://blog.marcnuri.com/prometheus-grafana-setup-minikube)
+- [docker port](https://docs.docker.com/engine/reference/commandline/port/)
+- [How can I kill a process by name instead of PID, on Linux? [duplicate]](https://stackoverflow.com/questions/160924/how-can-i-kill-a-process-by-name-instead-of-pid-on-linux)
