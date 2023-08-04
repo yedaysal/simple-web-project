@@ -153,6 +153,12 @@ After the execution of the command above, the application should be accessible v
 > **Note**
 > To change the port number in the application access URL above, change the port number `8181` at the end of the SSH tunnel command to something else.
 
+To close the tunnel use:
+
+```console
+pkill -f "docker@127.0.0.1"
+```
+
 ## Monitoring Kubernetes Cluster
 
 In order to monitor the kubernetes cluster, follow the instructions below:
