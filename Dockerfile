@@ -12,4 +12,4 @@ COPY ./app /app
 WORKDIR /app
 
 # Serve the app via Uvicorn ASGI web server 
-CMD [ "sh", "-c", "uvicorn app:app --reload --host 0.0.0.0" ]
+CMD [ "sh", "-c", "uvicorn app:app --host 0.0.0.0" ]
