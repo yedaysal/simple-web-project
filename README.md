@@ -21,3 +21,17 @@ This section provides brief information about the technologies used in the proje
 - [Minikube](https://minikube.sigs.k8s.io/docs/) for testing the application deployment on Kubernetes
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) for communicating with the local Kubernetes distribution (Minikube)
 
+## Requirements
+
+In order the application to be built, deployed and tested successfully, the underlying system should meet the following software:
+
+- Docker
+- Minikube
+- kubectl
+
+> **Tip**
+> To check whether the required software installed, execute the [`prereq-checker.sh`](./scripts/prereq-checker.sh) shell script.
+
+> **Note**
+> The underlying system should meet the hardware requirements to run above software.
+
