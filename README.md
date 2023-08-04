@@ -127,3 +127,18 @@ kubectl apply -f ingress.yaml
 
 Now the application should be deployed successfully and accessible via ingress.
 
+## Accessing The Application
+
+The method of accessing the application varies depending on the Docker installation type. If the underlying operating system supports native Docker installation (without Docker Desktop support, e.g. Linux) the application can be accessed directly via the IP address of the minikube container:
+
+```console
+curl http://$(minikube ip)
+```
+
+Otherwise, which means Docker is installed via Docker Desktop support (e.g., macOS and Windows), the application cannot be accessed directly via the IP address of the minikube container since the minikube container runs in a VM managed by Docker Desktop. In this case, an SSH tunnel needs to be opened to the minikube container. Open an SSH tunnel using the host port mapped to the minikube container's SSH port:
+
+```console
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -N docker@127.0.0.1 -p $(docker port minikube | grep -w 22 | cut -d ":" -f2) -i ~/.minikube/machines/minikube/id_rsa -L 8181:localhost:80
+```
+
+After the execution of the command above, the application should be accessible via http://localhost:8181 URL.
