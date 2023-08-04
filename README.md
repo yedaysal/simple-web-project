@@ -10,6 +10,13 @@ The project contains:
 - Detailed instructions on how to build and deploy the application
 - Configuration files to bootstrap the testing environment
 
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Requirements](#requirements)
+- [Instructions](#instructions)
+  - [Build](#build)
+
 ## Technologies
 
 This section provides brief information about the technologies used in the project. The technologies used are:
