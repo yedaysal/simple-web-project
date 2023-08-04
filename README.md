@@ -72,3 +72,58 @@ docker build -t simple-web-app:test .
 ```
 
 The application Docker image should be ready to be deployed now.
+
+### Deployment Instructions
+
+To deploy the application, follow the instructions below:
+
+1. Start a local k8s cluster:
+
+```console
+minikube start
+```
+
+2. Upload the application Docker image to minikube registry:
+
+```console
+minikube image load simple-web-app:test
+```
+
+3. Verify that the application Docker image is uploaded to minikube registry:
+
+```console
+minikube image ls | grep -w simple-web-app
+```
+
+4. Enable minikube ingress addon to deploy ingress-nginx-controller to minikube:
+
+```console
+minikube addons enable ingress
+```
+
+5. Go to the directory which contains k8s manifests (`~/simple-web-project/k8s`):
+
+```console
+cd ~/simple-web-project/k8s
+```
+
+6. Apply the application deployment manifest:
+
+```console
+kubectl apply -f deployment.yaml
+```
+
+7. Apply the application service manifest:
+
+```console
+kubectl apply -f service.yaml
+```
+
+8. Apply the application ingress manifest:
+
+```console
+kubectl apply -f ingress.yaml
+```
+
+Now the application should be deployed successfully and accessible via ingress.
+
