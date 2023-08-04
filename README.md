@@ -222,3 +222,37 @@ minikube service grafana-nodeport-service
 The important dashboard will look like this:
 
 ![k8s-dashboard](./images/k8s-dashboard.png)
+
+## Conclusion
+
+As a result of the project:
+
+- A web service application that responds to an HTTP GET request and returns Hostname and Timestamp information has been coded and packaged into a Docker image. The image has been kept small.
+- The Deployment, Service and Ingress manifests have been written and the application has been deployed to a local kubernetes cluster and accessed via ingress successfully. Currently the application has 3 replicas and the ingress-nginx-controller balances the traffic between them, the traffic is not redirected only one of them.
+
+![pod1-response](./images/pod1-response.png)
+
+<p align="center">
+  <strong>Response from Pod 1</strong>
+</p>
+
+<br>
+
+![pod2-response](./images/pod2-response.png)
+
+<p align="center">
+  <strong>Response from Pod 2</strong>
+</p>
+
+<br>
+
+![pod3-response](./images/pod3-response.png)
+
+<p align="center">
+  <strong>Response from Pod 3</strong>
+</p>
+
+<br>
+
+- A simple monitoring stack consisting of Prometheus and Grafana has been deployed to the local kubernetes cluster and a kubernetes dashboard has been created.
+- Documentation and configuration files have been provided via GitHub.
