@@ -15,7 +15,12 @@ The project contains:
 - [Technologies](#technologies)
 - [Requirements](#requirements)
 - [Instructions](#instructions)
-  - [Build](#build)
+  - [Build Instructions](#build-instructions)
+  - [Deployment Instructions](#deployment-instructions)
+- [Accessing The Application](#accessing-the-application)
+- [Monitoring Kubernetes Cluster](#monitoring-kubernetes-cluster)
+- [Conclusion](#conclusion)
+- [Resources](#resources)
 
 ## Technologies
 
