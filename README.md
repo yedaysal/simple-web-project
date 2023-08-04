@@ -35,3 +35,30 @@ In order the application to be built, deployed and tested successfully, the unde
 > **Note**
 > The underlying system should meet the hardware requirements to run above software.
 
+## Instructions
+
+This section provides the instructions on how to build and deploy the application.
+
+### Build Instructions
+
+To build the application, follow the instructions below:
+
+1. Clone this repository using `git clone` command into the current user's home directory:
+
+```console
+cd ; git clone https://github.com/yedaysal/simple-web-project.git
+```
+
+2. cd into the local repository directory `~/simple-web-project`:
+
+```console
+cd ~/simple-web-project
+```
+
+3. Run `docker build` command the package the application:
+
+```console
+docker build -t simple-web-app:test .
+```
+
+The application Docker image should be ready to be deployed now.
