@@ -77,7 +77,7 @@ The application Docker image should be ready to be deployed now.
 
 To deploy the application, follow the instructions below:
 
-1. Start a local k8s cluster:
+1. Start a minikube cluster:
 
 ```console
 minikube start
