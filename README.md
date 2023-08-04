@@ -42,6 +42,9 @@ In order the application to be built, deployed and tested successfully, the unde
 > **Note**
 > The underlying system should meet the hardware requirements to run above software.
 
+> **Note**
+> To prevent possible errors that may occur related to `docker` command permissions, add the user account which will be used to build and deploy the application to **docker** group by executing `sudo usermod -aG docker <username>` command, then log off and log in to the system.
+
 ## Instructions
 
 This section provides the instructions on how to build and deploy the application.
