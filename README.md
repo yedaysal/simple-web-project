@@ -129,16 +129,19 @@ Now the application should be deployed successfully and accessible via ingress.
 
 ## Accessing The Application
 
-The method of accessing the application varies depending on the Docker installation type. If the underlying operating system supports native Docker installation (without Docker Desktop support, e.g. Linux) the application can be accessed directly via the IP address of the minikube container:
+The method of accessing the application varies depending on the Docker installation type. If the underlying operating system supports native Docker installation (without Docker Desktop support, e.g. Linux) the application can be accessed directly via the IP address of the minikube container (since the ingress-nginx-controller NodePort service listens on the port 80 in the minikube container):
 
 ```console
 curl http://$(minikube ip)
 ```
 
-Otherwise, which means Docker is installed via Docker Desktop support (e.g., macOS and Windows), the application cannot be accessed directly via the IP address of the minikube container since the minikube container runs in a VM managed by Docker Desktop. In this case, an SSH tunnel needs to be opened to the minikube container. Open an SSH tunnel using the host port mapped to the minikube container's SSH port:
+Otherwise, which means Docker is installed via Docker Desktop support (e.g., macOS and Windows), any connection to the minikube container cannot be established directly since the minikube container runs in a VM managed by Docker Desktop. In this case, an SSH tunnel needs to be opened to the ingress-nginx-controller NodePort service in the minikube container. Open an SSH tunnel using the host port mapped to the minikube container's SSH port:
 
 ```console
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -N docker@127.0.0.1 -p $(docker port minikube | grep -w 22 | cut -d ":" -f2) -i ~/.minikube/machines/minikube/id_rsa -L 8181:localhost:80
 ```
 
-After the execution of the command above, the application should be accessible via http://localhost:8181 URL.
+After the execution of the command above, the application should be accessible via [http://localhost:8181](http://localhost:8181) URL.
+
+> **Note**
+> To change the port number in the application access URL above, change the port number `8181` at the end of the SSH tunnel command to something else.
