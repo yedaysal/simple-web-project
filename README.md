@@ -30,7 +30,7 @@ This section provides brief information about the technologies used in the proje
 
 ## Requirements
 
-In order the application to be built, deployed, tested and monitored successfully, the underlying system should meet the following software:
+In order the application to be built, deployed, tested and the kubernetes cluster to be monitored successfully, the underlying system should meet the following software:
 
 - Docker
 - Minikube
