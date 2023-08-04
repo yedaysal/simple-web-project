@@ -147,6 +147,72 @@ After the execution of the command above, the application should be accessible v
 > **Note**
 > To change the port number in the application access URL above, change the port number `8181` at the end of the SSH tunnel command to something else.
 
-## Monitoring The Kubernetes Cluster
+## Monitoring Kubernetes Cluster
 
+In order to monitor the kubernetes cluster, follow the instructions below:
 
+1. Add Prometheus helm repository:
+
+```console
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+2. Install the Prometheus helm chart:
+
+```console
+helm install prometheus prometheus-community/prometheus
+```
+
+3. Expose the prometheus-server deployment via NodePort service:
+
+```console
+kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-nodeport-service
+```
+
+4. Add Grafana helm repository:
+
+```console
+helm repo add grafana https://grafana.github.io/helm-charts
+```
+
+5. Install the Grafana helm chart:
+
+```console
+helm install grafana grafana/grafana
+```
+
+6. Expose the grafana deployment via NodePort service:
+
+```console
+kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-nodeport-service
+```
+
+7. Retrieve the grafana `admin` user's password:
+
+```console
+kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+
+8. Access the Grafana web interface using the `admin` user and the password retrieved:
+
+```console
+minikube service grafana-nodeport-service
+```
+
+![grafana-login-page](./images/grafana-login-page.png)
+
+> **Note**
+> `minikube service` command opens an SSH tunnel to the specified service in the minikube container.
+
+9. Once logged in, go to **Administration -> Data Sources** to add a Prometheus datasource. The URL to the Prometheus instance is the name of the service `http://prometheus-server:80`:
+
+![prometheus-datasource](./images/prometheus-datasource.png)
+
+10. Go to **Dashboards -> New -> Import**, enter the dashboard ID `6417` and click on **Load**. On the opening page select Prometheus data source and click on **Import**:
+
+![import-dashboard](./images/import-dashboard.png)
+![import-dashboard-2](./images/import-dashboard-2.png)
+
+The important dashboard will look like this:
+
+![k8s-dashboard](./images/k8s-dashboard.png)
