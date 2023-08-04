@@ -30,11 +30,12 @@ This section provides brief information about the technologies used in the proje
 
 ## Requirements
 
-In order the application to be built, deployed and tested successfully, the underlying system should meet the following software:
+In order the application to be built, deployed, tested and monitored successfully, the underlying system should meet the following software:
 
 - Docker
 - Minikube
 - kubectl
+- Helm
 
 > **Tip**
 > To check whether the required software installed, execute the [`prereq-checker.sh`](./scripts/prereq-checker.sh) shell script.
@@ -145,3 +146,7 @@ After the execution of the command above, the application should be accessible v
 
 > **Note**
 > To change the port number in the application access URL above, change the port number `8181` at the end of the SSH tunnel command to something else.
+
+## Monitoring The Kubernetes Cluster
+
+
