@@ -216,6 +216,9 @@ minikube service grafana-nodeport-service
 > **Note**
 > `minikube service` command opens an SSH tunnel to the specified service in the minikube container.
 
+> **Note**
+> It may take some time for the grafana-nodeport-service to be available. If `minikube service grafana-nodeport-service` gives an error, wait for a while and try executing the command again.
+
 9. Once logged in, go to **Administration -> Data Sources** to add a Prometheus datasource. The URL to the Prometheus instance is the name of the service `http://prometheus-server:80`:
 
 ![prometheus-datasource](./images/prometheus-datasource.png)
