@@ -32,6 +32,8 @@ This section provides brief information about the technologies used in the proje
 - [Docker Engine](https://docs.docker.com/engine/) to package the application
 - [Minikube](https://minikube.sigs.k8s.io/docs/) for testing the application deployment on Kubernetes
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) for communicating with the local Kubernetes distribution (Minikube)
+- [Helm](https://helm.sh/) package manager
+for Kubernetes to setup Prometheus and Grafana on Minikube
 - [Prometheus](https://prometheus.io/) to collect k8s cluster metrics
 - [Grafana](https://grafana.com/oss/grafana/) to monitor metrics stored on Prometheus
 
