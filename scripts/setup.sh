@@ -24,7 +24,7 @@ echo "Enabling minikube ingress addon..."
 minikube addons enable ingress
 echo
 
-echo "Waiting for ingress-nginx-controller to be available..."
+echo "Waiting for ingress-nginx-controller to become available..."
 sleep 30
 echo
 
