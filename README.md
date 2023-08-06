@@ -63,7 +63,7 @@ This section provides the instructions on how to build and deploy the applicatio
 > To build and deploy the application faster in an automated way, the[`setup.sh`](./scripts/setup.sh) can be used.
 
 > **Tip**
-> To delete the minikube cluster, prune docker system and close the ssh tunnel, the[`destroy.sh`](./scripts/setup.sh) can be used.
+> To delete the minikube cluster, prune docker system and close the ssh tunnel, the[`destroy.sh`](./scripts/destroy.sh) can be used.
 
 ### Build Instructions
 
