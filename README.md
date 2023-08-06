@@ -46,11 +46,11 @@ In order the application to be built, deployed, tested and the kubernetes cluste
 - kubectl
 - Helm
 
-> **Tip**
-> To check whether the required software installed, execute the [`prereq-checker.sh`](./scripts/prereq-checker.sh) shell script.
-
 > **Note**
 > The underlying system should meet the hardware requirements to run above software.
+
+> **Tip**
+> To check whether the required software installed, execute the [`prereq-checker.sh`](./scripts/prereq-checker.sh) shell script.
 
 > **Note**
 > To prevent possible errors that may occur related to `docker` command permissions, add the user account which will be used to build and deploy the application to **docker** group by executing `sudo usermod -aG docker <username>` command, then log off and log in to the system.
